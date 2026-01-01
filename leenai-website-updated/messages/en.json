@@ -1,0 +1,41 @@
+{
+  "nav": {
+    "home": "Home",
+    "solutions": "Solutions",
+    "how": "How it works",
+    "security": "Security & PDPL",
+    "resources": "Resources",
+    "caseStudies": "Case studies",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "cta": {
+    "bookCall": "Book a call",
+    "viewSolutions": "View solutions",
+    "download": "Request materials"
+  },
+  "common": {
+    "comingSoon": "Coming soon",
+    "back": "Back"
+  },
+  "contact": {
+    "title": "Book a call",
+    "subtitle": "Tell us what decision you want to improve. We’ll respond with a pilot plan and acceptance criteria.",
+    "name": "Name",
+    "email": "Work email",
+    "company": "Company",
+    "message": "What are you trying to achieve?",
+    "consent": "I agree that LeenAI may contact me about this request.",
+    "submit": "Send",
+    "success": "Thanks — we received your message.",
+    "error": "Something went wrong. Please try again, or email us.",
+    "tip": "Tip: avoid including personal data unless strictly necessary.",
+    "errors": {
+      "consent": "Please confirm the consent checkbox to proceed."
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "pdplNote": "PDPL-aware by design. Pilots start read-only; writes unlock post-UAT via Security Gate + CR."
+  }
+}

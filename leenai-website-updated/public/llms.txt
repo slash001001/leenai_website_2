@@ -1,0 +1,24 @@
+# LeenAI website (LLM-readable index)
+# This file is intended to help LLMs and search systems understand the site structure.
+
+[company]
+LeenAI (KSA-focused, PDPL-aware)
+
+[primary-offer]
+AI Pilot Studio — KPI-anchored pilots (6–8 weeks) that deliver governed decision systems.
+
+[key-pages]
+/en
+/ar
+/en/solutions
+/ar/solutions
+/en/how-it-works
+/ar/how-it-works
+/en/security-pdpl
+/ar/security-pdpl
+/en/contact
+/ar/contact
+
+[notes]
+- Pilots start read-only; write operations unlock post-UAT via Security Gate + Change Request (CR).
+- No personal data in prompts or logs (default posture).
