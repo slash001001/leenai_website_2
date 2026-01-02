@@ -24,9 +24,9 @@ export function generateStaticParams() {
 export async function generateMetadata({
   params
 }: {
-  params: {locale: Locale; slug: string};
+  params: Promise<{locale: Locale; slug: string}>;
 }): Promise<Metadata> {
-  const {locale, slug} = params;
+  const {locale, slug} = await params;
   const solution = solutions.find((s) => s.slug === slug);
   if (!solution) return {};
   const url = siteUrl();
@@ -47,8 +47,8 @@ export async function generateMetadata({
   };
 }
 
-export default async function SolutionPage({params}: {params: {locale: Locale; slug: string}}) {
-  const {locale, slug} = params;
+export default async function SolutionPage({params}: {params: Promise<{locale: Locale; slug: string}>}) {
+  const {locale, slug} = await params;
   const t = await getTranslations({locale});
   const base = `/${locale}`;
 

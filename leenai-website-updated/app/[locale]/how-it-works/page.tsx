@@ -15,9 +15,9 @@ import {Badge} from '@/components/ui/badge';
 export async function generateMetadata({
   params
 }: {
-  params: {locale: Locale};
+  params: Promise<{locale: Locale}>;
 }): Promise<Metadata> {
-  const {locale} = params;
+  const {locale} = await params;
   const url = siteUrl();
   const title = locale === 'ar' ? 'كيف نعمل | لينAI' : 'How it works | LeenAI';
   const description =
@@ -38,8 +38,8 @@ export async function generateMetadata({
   };
 }
 
-export default async function HowItWorksPage({params}: {params: {locale: Locale}}) {
-  const {locale} = params;
+export default async function HowItWorksPage({params}: {params: Promise<{locale: Locale}>}) {
+  const {locale} = await params;
   const t = await getTranslations({locale});
 
   const deliverables = [

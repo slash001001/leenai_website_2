@@ -23,9 +23,9 @@ import {Accordion, AccordionContent, AccordionItem, AccordionTrigger} from '@/co
 export async function generateMetadata({
   params
 }: {
-  params: {locale: Locale};
+  params: Promise<{locale: Locale}>;
 }): Promise<Metadata> {
-  const {locale} = params;
+  const {locale} = await params;
   const url = siteUrl();
   const title = locale === 'ar' ? 'لينAI | أنظمة قرار خلال 6–8 أسابيع' : 'LeenAI | Decision Systems in 6–8 weeks';
   const description = pick(locale, site.description);
@@ -48,8 +48,8 @@ export async function generateMetadata({
   };
 }
 
-export default async function HomePage({params}: {params: {locale: Locale}}) {
-  const {locale} = params;
+export default async function HomePage({params}: {params: Promise<{locale: Locale}>}) {
+  const {locale} = await params;
   const t = await getTranslations({locale});
   const base = `/${locale}`;
 

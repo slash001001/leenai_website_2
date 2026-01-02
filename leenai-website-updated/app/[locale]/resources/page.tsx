@@ -14,9 +14,9 @@ import Link from 'next/link';
 export async function generateMetadata({
   params
 }: {
-  params: {locale: Locale};
+  params: Promise<{locale: Locale}>;
 }): Promise<Metadata> {
-  const {locale} = params;
+  const {locale} = await params;
   const url = siteUrl();
   const title = locale === 'ar' ? 'الموارد | لينAI' : 'Resources | LeenAI';
   const description =
@@ -34,8 +34,8 @@ export async function generateMetadata({
   };
 }
 
-export default async function ResourcesPage({params}: {params: {locale: Locale}}) {
-  const {locale} = params;
+export default async function ResourcesPage({params}: {params: Promise<{locale: Locale}>}) {
+  const {locale} = await params;
   const t = await getTranslations({locale});
   const base = `/${locale}`;
 

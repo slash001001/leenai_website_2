@@ -17,9 +17,9 @@ import {SolutionIcon} from '@/components/solution-icon';
 export async function generateMetadata({
   params
 }: {
-  params: {locale: Locale};
+  params: Promise<{locale: Locale}>;
 }): Promise<Metadata> {
-  const {locale} = params;
+  const {locale} = await params;
   const url = siteUrl();
   const title = locale === 'ar' ? 'الحلول | لينAI' : 'Solutions | LeenAI';
   const description =
@@ -40,8 +40,8 @@ export async function generateMetadata({
   };
 }
 
-export default async function SolutionsPage({params}: {params: {locale: Locale}}) {
-  const {locale} = params;
+export default async function SolutionsPage({params}: {params: Promise<{locale: Locale}>}) {
+  const {locale} = await params;
   const t = await getTranslations({locale});
   const base = `/${locale}`;
 

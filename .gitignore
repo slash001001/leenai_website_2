@@ -1,0 +1,6 @@
+
+# artifacts
+leenai-website-updated/node_modules/
+leenai-website-updated/.next/
+leenai-website-updated/tsconfig.tsbuildinfo
+leenai-website-updated/.env.local
